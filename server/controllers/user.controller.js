@@ -29,7 +29,7 @@ const login = async (req, res) => {
   const userDocument = await User.findOne({ email: req.body.email });
   console.log('USERDOC', userDocument);
   if (!userDocument) {
-    res.status(400).json({ error:'Email does not exist' });
+    res.status(400).json({ error:'Email Cant be blank' });
     return;
   } else {
     try {
